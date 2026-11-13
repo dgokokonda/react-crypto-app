@@ -16,12 +16,6 @@ const siderStyle: React.CSSProperties = {
   boxShadow: '2px 0 8px rgba(0, 0, 0, 0.3)',
 };
 
-// const headerStyle: React.CSSProperties = {
-//   textAlign: 'center',
-//   marginBottom: '1.5rem',
-//   paddingBottom: '1rem',
-// };
-
 const cardStyle: React.CSSProperties = {
   backgroundColor: "#002c72dc",
   marginBottom: '1rem',
@@ -39,25 +33,11 @@ type ListyItem = {
 export default function AppSider() {
   const { assets } = useCrypto()
 
-  // if (loading) {
-  //   return (
-  //     <div style={siderStyle}>
-  //       <div style={headerStyle}>
-  //         <Typography.Title level={3}>Ваши активы</Typography.Title>
-  //       </div>
-  //       <Skeleton active />
-  //     </div>
-  //   )
-  // }
-
   if (!assets || assets.length === 0) {
     return (
       <div style={siderStyle}>
-        {/* <div style={headerStyle}>
-          <Typography.Title level={3}>Портфель</Typography.Title>
-        </div> */}
         <div style={{ textAlign: 'center', color: '#ffffff', padding: '2rem 0' }}>
-          <Typography.Text style={{ color: '#85a1ff' }}>Нет активов</Typography.Text>
+          <Typography.Text style={{ color: '#85a1ff' }}>No assets</Typography.Text>
         </div>
       </div>
     )
@@ -65,9 +45,6 @@ export default function AppSider() {
 
   return (
     <div style={siderStyle}>
-      {/* <div style={headerStyle}>
-        <Typography.Title style={{ color: '#ffffff' }} level={3}>Портфель</Typography.Title>
-      </div> */}
       {assets.map(asset => (
         <Card key={asset.id} style={cardStyle} bordered={false} bodyStyle={{ padding: '1.25rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem' }}>
