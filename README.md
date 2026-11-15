@@ -2,6 +2,8 @@
 
 Приложение для учёта криптовалютного портфеля на **React 19**, **TypeScript** и **Vite** с UI на базе **Ant Design v6**.
 
+Демо: [https://dgokokonda.github.io/react-crypto-app](https://dgokokonda.github.io/react-crypto-app)
+
 ## Возможности
 
 - 📊 **Портфель активов** — таблица с криптовалютами, сортировкой по названию, цене и количеству.
