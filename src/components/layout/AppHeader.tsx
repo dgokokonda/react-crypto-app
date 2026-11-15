@@ -10,6 +10,7 @@ const headerStyle: CSSProperties = {
   textAlign: "center",
   height: 60,
   padding: '1rem',
+  position: 'fixed',
   display: "flex",
   justifyContent: "space-between",
   alignItems: 'center',
@@ -50,7 +51,7 @@ export default function AppHeader() {
       open={select}
       onSelect={handleSelect}
       onClick={() => setSelect((prev) => !prev)}
-      value="Select asset"
+      value="Get asset info"
       options={crypto.map((coin) => ({
         label: coin.name,
         value: coin.id,

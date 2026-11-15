@@ -21,11 +21,13 @@ export function CryptoContextProvider({ children }: { children: ReactNode }) {
     return assets.map((asset: Asset) => {
       const coin = result.find((c: CryptoCoin) => c.id === asset.id)
       const coinPrice = coin?.price ?? asset.price
+      const coinName = coin?.name ?? asset.id
       return {
         grow: asset.price < coinPrice,
         growPercent: percentDifference(asset.price, coinPrice),
         totalAmount: asset.amount * coinPrice,
         totalProfit: asset.amount * coinPrice - asset.amount * asset.price,
+        name: coinName,
         ...asset
       }
     })
